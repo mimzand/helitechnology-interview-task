@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { Toast } from "../../interfaces/Toast";
+import { Toast } from "../../interfaces";
 
 type ToastContextType = {
   toasts: Array<Toast>;

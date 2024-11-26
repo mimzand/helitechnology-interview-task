@@ -1,6 +1,6 @@
 import { ToastContext } from ".";
 import { useCallback, useMemo, useState } from "react";
-import { Toast } from "../../interfaces/Toast";
+import { Toast } from "../../interfaces";
 
 export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   const [toasts, setToasts] = useState<Array<Toast>>([]);
