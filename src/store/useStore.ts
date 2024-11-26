@@ -1,7 +1,7 @@
 // src/store/useStore.ts
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { POSTS } from "../constants/posts";
+import { POSTS } from "../constants/Posts";
 import { StoreState } from "../interfaces/index";
 
 const useStore = create<StoreState>()(
