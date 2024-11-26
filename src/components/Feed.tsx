@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import PostCard from "./PostCard";
 import useStore from "../store/useStore";
 
 const Feed: React.FC = () => {
   const posts = useStore((state) => state.posts);
-  const [postCount, setPostCount] = useState(posts.length);
-
-  useEffect(() => {
-    setPostCount(posts.length);
-  }, [postCount, posts]);
+  const postCount = useMemo(() => posts.length, [posts]);
 
   return (
     <div className="container mx-auto p-4">
