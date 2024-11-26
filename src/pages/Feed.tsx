@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import PostCard from "./PostCard";
 import useStore from "../store/useStore";
+import PostCard from "../components/PostCard";
 
 const Feed: React.FC = () => {
   const posts = useStore((state) => state.posts);
