@@ -1,4 +1,6 @@
-export const POSTS = [
+import { Post } from "../interfaces";
+
+export const POSTS: Array<Post> = [
   {
     id: 1,
     author: "John Doe",
