@@ -1,5 +1,5 @@
 import { type FC, useCallback } from "react";
-import { REPORT_REASONS } from "../constants/ReportReasons";
+import { REPORT_REASONS } from "../constants";
 import { ReportProps } from "../interfaces";
 import useToast from "./Toast";
 import Modal from "./Modal";

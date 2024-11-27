@@ -5,3 +5,4 @@ export * from "./Toast";
 export * from "./ModalProps";
 export * from "./ReportProps";
 export * from "./Report";
+export * from "./ToggleButtonProps";

@@ -1,8 +1,11 @@
 import { memo, useState } from "react";
-import useStore from "../store/useStore";
+import ReportButton from "./Buttons/ReportButton";
 import { PostCardProps } from "../interfaces";
+import useStore from "../store/useStore";
 import ReportModal from "./ReportModal";
 import useToast from "./Toast";
+import LikeButton from "./Buttons/LikeButton";
+import BookmarkButton from "./Buttons/BookmarkButton";
 
 const PostCard: React.FC<PostCardProps> = ({
   id,
@@ -29,34 +32,17 @@ const PostCard: React.FC<PostCardProps> = ({
         />
       )}
       <div className="flex justify-start items-center gap-2">
-        <button
-          onClick={() => toggleLike(id)}
-          className={`px-4 py-2 w-20 rounded ${
-            liked ? "bg-red-500 text-white" : "bg-gray-200 dark:bg-gray-700"
-          }`}
-        >
-          {liked ? "Unlike" : "Like"}
-        </button>
-        <button
+        <LikeButton marked={liked} onClick={() => toggleLike(id)} />
+
+        <BookmarkButton
+          marked={bookmarked}
           onClick={() => {
             toggleBookmark(id);
             addToast("The requested changes have been successfully applied.");
           }}
-          className={`px-4 py-2 w-32 rounded ${
-            bookmarked
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200 dark:bg-gray-700"
-          }`}
-        >
-          {bookmarked ? "Unsave" : "Save"}
-        </button>
+        />
 
-        <button
-          className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700"
-          onClick={() => toggleReportModal(true)}
-        >
-          Report
-        </button>
+        <ReportButton onClick={() => toggleReportModal(true)} />
       </div>
 
       <ReportModal
